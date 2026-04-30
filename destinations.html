@@ -1,14 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Destinations</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destinations | PackNGo</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 </head>
 <body>
 
-<header>
-    <h2>PackNGo</h2>
-    <nav>
+<header class="site-header">
+    <div class="brand">
+        <span class="logo">PackNGo</span>
+        <p>Adventure made simple</p>
+    </div>
+    <nav class="main-nav">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="destinations.html">Destinations</a>
@@ -17,17 +23,137 @@
     </nav>
 </header>
 
-<section>
-    <h1>Destinations</h1>
-    <div class="cards">
-        <div class="card">Paris</div>
-        <div class="card">Maldives</div>
-        <div class="card">Bali</div>
-    </div>
-</section>
+<main>
+    <section class="hero">
+        <div class="hero-copy">
+            <span class="eyebrow">Explore destinations</span>
+            <h1>Discover Your Next Adventure</h1>
+            <p>From serene beaches to majestic mountains, find the perfect destination that matches your travel style and creates unforgettable memories.</p>
+            <div class="hero-actions">
+                <a href="#destinations" class="btn btn-primary">Browse All</a>
+                <a href="packages.html" class="btn btn-secondary">View Packages</a>
+            </div>
+        </div>
+    </section>
 
-<footer>
-    <p>© 2026 PackNGo</p>
+    <section class="search-section">
+        <div class="search-container">
+            <input type="text" id="searchInput" class="search-input" placeholder="Search destinations...">
+            <button class="search-btn" onclick="searchDestinations()">Search</button>
+        </div>
+        <div class="filter-buttons">
+            <button class="filter-btn active" onclick="filterDestinations('all')">All</button>
+            <button class="filter-btn" onclick="filterDestinations('beach')">Beach</button>
+            <button class="filter-btn" onclick="filterDestinations('mountain')">Mountain</button>
+            <button class="filter-btn" onclick="filterDestinations('city')">City</button>
+            <button class="filter-btn" onclick="filterDestinations('adventure')">Adventure</button>
+        </div>
+    </section>
+
+    <section id="destinations" class="featured-destinations">
+        <div class="section-header">
+            <h2>Popular Destinations</h2>
+            <p>Handpicked locations offering unique experiences and breathtaking scenery.</p>
+        </div>
+        <div class="cards" id="destinationsGrid">
+            <article class="card" data-category="beach">
+                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80" alt="Goa beach">
+                <div class="card-text">
+                    <span>Beach Escape</span>
+                    <h3>Goa, India</h3>
+                    <p>Relax on golden shores, enjoy vibrant nightlife, and stay at premium sea-view resorts.</p>
+                </div>
+            </article>
+            <article class="card" data-category="mountain">
+                <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=1200&q=80" alt="Manali mountains">
+                <div class="card-text">
+                    <span>Mountain Retreat</span>
+                    <h3>Manali, India</h3>
+                    <p>Experience crisp mountain air, cozy stays, and adventurous trails through the Himalayas.</p>
+                </div>
+            </article>
+            <article class="card" data-category="city">
+                <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1200&q=80" alt="Dubai skyline">
+                <div class="card-text">
+                    <span>Luxury City</span>
+                    <h3>Dubai, UAE</h3>
+                    <p>Discover iconic skylines, luxury shopping, and unforgettable desert adventures.</p>
+                </div>
+            </article>
+            <article class="card" data-category="beach">
+                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1200&q=80" alt="Kerala backwaters">
+                <div class="card-text">
+                    <span>Backwater Paradise</span>
+                    <h3>Kerala, India</h3>
+                    <p>Cruise through serene backwaters, experience Ayurveda, and enjoy tropical cuisine.</p>
+                </div>
+            </article>
+            <article class="card" data-category="adventure">
+                <img src="https://images.unsplash.com/photo-1464822759844-d150f39ac1ac?auto=format&fit=crop&w=1200&q=80" alt="Rajasthan desert">
+                <div class="card-text">
+                    <span>Desert Adventure</span>
+                    <h3>Rajasthan, India</h3>
+                    <p>Explore royal palaces, camel safaris, and vibrant culture in the Thar Desert.</p>
+                </div>
+            </article>
+            <article class="card" data-category="mountain">
+                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1200&q=80" alt="Shimla hills">
+                <div class="card-text">
+                    <span>Hill Station</span>
+                    <h3>Shimla, India</h3>
+                    <p>Walk through colonial architecture, enjoy tea gardens, and experience cool mountain breezes.</p>
+                </div>
+            </article>
+            <article class="card" data-category="city">
+                <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=1200&q=80" alt="Mumbai skyline">
+                <div class="card-text">
+                    <span>Urban Experience</span>
+                    <h3>Mumbai, India</h3>
+                    <p>From Bollywood glamour to street food delights, experience the heartbeat of India.</p>
+                </div>
+            </article>
+            <article class="card" data-category="beach">
+                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80" alt="Andaman islands">
+                <div class="card-text">
+                    <span>Island Paradise</span>
+                    <h3>Andaman & Nicobar</h3>
+                    <p>Dive into coral reefs, relax on pristine beaches, and discover marine biodiversity.</p>
+                </div>
+            </article>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3>PackNGo</h3>
+            <p>Your trusted travel companion for unforgettable journeys. We make adventure accessible to everyone.</p>
+        </div>
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="destinations.html">Destinations</a>
+            <a href="packages.html">Packages</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-section">
+            <h3>Contact Info</h3>
+            <p>Email: info@packngo.com</p>
+            <p>Phone: +91 98765 43210</p>
+            <p>Address: Mumbai, India</p>
+        </div>
+        <div class="footer-section">
+            <h3>Follow Us</h3>
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">Twitter</a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2026 PackNGo. All rights reserved. | Designed with ❤️ for travelers</p>
+    </div>
 </footer>
 
 </body>
