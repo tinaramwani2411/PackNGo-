@@ -613,24 +613,28 @@ button:hover,
     margin: 0 auto;
 }
 
-.testimonial-card {
+.testimonials-section .testimonial-card {
     background: #f8fafc;
     padding: 32px;
     border-radius: 16px;
     border: 1px solid #e2e8f0;
     text-align: center;
+    color: #0f172a;
 }
 
-.testimonial-text {
+.testimonials-section .testimonial-card .testimonial-text,
+.testimonials-section .testimonial-card .testimonial-author {
+    color: #0f172a;
+}
+
+.testimonials-section .testimonial-card .testimonial-text {
     font-style: italic;
-    color: #475569;
     line-height: 1.6;
     margin-bottom: 20px;
 }
 
-.testimonial-author {
+.testimonials-section .testimonial-card .testimonial-author {
     font-weight: 600;
-    color: #0f172a;
 }
 
 /* Contact Form Styles */
