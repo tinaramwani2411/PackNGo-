@@ -108,8 +108,8 @@ PackNGo/
 
 For questions or feedback about this project:
 - **Email**: info@packngo.com
-- **Phone**: +91 98765 43210
-- **Address**: 123 Travel Street, Mumbai, India
+- **Phone**: +91 8329884928
+- **Address**: Mandir road, Shegaon , Maharashtra
 
 ## 📝 License
 
